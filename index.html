@@ -3,63 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duffynez | Home</title>
+    <title>Video přehrávač</title>
     <style>
-        /* Tady začíná CSS - vzhled */
+        /* Nastavení celé stránky */
         body {
-            background-color: #121212; /* Tmavé pozadí */
-            color: #ffffff;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #000000; /* Černé pozadí */
             margin: 0;
+            height: 100vh; /* Výška přes celou obrazovku */
+            display: flex; /* Zapne "pružný" layout pro centrování */
+            justify-content: center; /* Vycentruje vodorovně */
+            align-items: center; /* Vycentruje svisle */
+            overflow: hidden; /* Schová posuvníky, kdyby video bylo moc velké */
         }
-        .karta {
-            background-color: #1e1e1e;
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            border: 1px solid #333;
-            max-width: 400px;
-            width: 100%;
-        }
-        h1 {
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-            background: linear-gradient(90deg, #ff8a00, #e52e71); /* Barevný přechod */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        p { color: #aaaaaa; margin-bottom: 30px; }
-        .tlacitko {
-            display: block;
-            background-color: #333;
-            color: white;
-            text-decoration: none;
-            padding: 15px;
-            margin: 10px 0;
-            border-radius: 10px;
-            transition: 0.3s; /* Animace při najetí myší */
-        }
-        .tlacitko:hover {
-            background-color: #555;
-            transform: scale(1.05); /* Zvětšení při najetí */
+
+        /* Nastavení vzhledu videa */
+        video {
+            max-width: 90%; /* Aby nebylo širší než obrazovka */
+            max-height: 90vh; /* Aby nebylo vyšší než obrazovka */
+            
+            /* RÁMEČEK */
+            border: 4px solid #333; /* Tmavě šedý rámeček, tloušťka 4px */
+            border-radius: 12px; /* Zaoblené rohy rámečku */
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1); /* Jemná záře kolem */
+            outline: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="karta">
-        <h1>Duffynez</h1>
-        <p>Vítej na mém osobním webu. Tady najdeš mé projekty a kontakty.</p>
-        
-        <a href="#" class="tlacitko">Můj GitHub</a>
-        <a href="#" class="tlacitko">Instagram</a>
-        <a href="#" class="tlacitko">Kontaktovat mě</a>
-    </div>
+    <video controls autoplay muted>
+        <source src="dancing_duck.mp4" type="video/mp4">
+        Váš prohlížeč nepodporuje přehrávání videa.
+    </video>
 
 </body>
 </html>
