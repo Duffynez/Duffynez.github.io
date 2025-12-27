@@ -10,22 +10,42 @@
             background-color: #000000; /* Černé pozadí */
             margin: 0;
             height: 100vh; /* Výška přes celou obrazovku */
-            display: flex; /* Zapne "pružný" layout pro centrování */
-            justify-content: center; /* Vycentruje vodorovně */
-            align-items: center; /* Vycentruje svisle */
-            overflow: hidden; /* Schová posuvníky, kdyby video bylo moc velké */
+            display: flex; /* Zapne "pružný" layout */
+            flex-direction: column; /* DŮLEŽITÉ: Seřadí prvky pod sebe (sloupec) */
+            justify-content: center; /* Vycentruje svisle */
+            align-items: center; /* Vycentruje vodorovně */
+            overflow: hidden; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Moderní font */
         }
 
         /* Nastavení vzhledu videa */
         video {
-            max-width: 90%; /* Aby nebylo širší než obrazovka */
-            max-height: 90vh; /* Aby nebylo vyšší než obrazovka */
+            max-width: 90%; 
+            max-height: 80vh; /* Zmenšil jsem trochu výšku, aby zbylo místo na text */
             
             /* RÁMEČEK */
-            border: 4px solid #333; /* Tmavě šedý rámeček, tloušťka 4px */
-            border-radius: 12px; /* Zaoblené rohy rámečku */
-            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1); /* Jemná záře kolem */
+            border: 4px solid #333; 
+            border-radius: 12px; 
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.1); 
             outline: none;
+        }
+
+        /* STYL PRO INSTAGRAM ODKAZ */
+        .ig-odkaz {
+            margin-top: 25px; /* Mezera mezi videem a textem */
+            color: rgba(255, 255, 255, 0.7); /* Jemná bílá barva */
+            text-decoration: none; /* Odstraní podtržení */
+            font-size: 1.1rem; /* Velikost písma */
+            font-weight: 300; /* Tenké písmo (elegantní) */
+            letter-spacing: 2px; /* Rozestupy mezi písmeny */
+            transition: all 0.3s ease; /* Plynulá animace */
+        }
+
+        /* Efekt po najetí myší */
+        .ig-odkaz:hover {
+            color: #ffffff; /* Rozsvítí se čistě bíle */
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Jemná záře */
+            transform: scale(1.05); /* Lehce se zvětší */
         }
     </style>
 </head>
@@ -35,6 +55,10 @@
         <source src="dancing_duck.mp4" type="video/mp4">
         Váš prohlížeč nepodporuje přehrávání videa.
     </video>
+
+    <a href="https://www.instagram.com/by_vendula" target="_blank" class="ig-odkaz">
+        @by_vendula
+    </a>
 
 </body>
 </html>
